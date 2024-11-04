@@ -9,5 +9,15 @@ public class Program
         // one of your projects.
 
         Console.WriteLine("Hello Sandbox World!");
+        var listOfNames = new List<string> {"John",  "Mary", "Jane",  "Bob", "Jacob",  "Lily", "Tom", "Lucy"};
+
+        ArrayPractice arrayPractice  = new();
+
+        // arrayPractice.DynamicArray();
+        // arrayPractice.FixedArray();
+        // arrayPractice.Run();    
+        // arrayPractice.DoSomething(100);
+        arrayPractice.DoSomethingElse(listOfNames);
+
     }
 }
