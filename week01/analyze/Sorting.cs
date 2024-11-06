@@ -9,13 +9,12 @@ public static class Sorting {
 
         SortArray(numbers);
         // Console.Out.WriteLine("int[]{{{0}}}", string.Join(", ", numbers)); //int[]{1, 2, 3, 4, 6, 8, 9}
-
         stopwatch.Stop();
+
         /** 
         * Print the first 10 elements to verify sorting without overwhelming the output
         * Then test the performance of the sorting algorithm
         */
-     
         Console.WriteLine("First 10 elements of sorted array: {0}", string.Join(", ", numbers[..10]));
         Console.WriteLine("Sorting took {0}ms", stopwatch.ElapsedMilliseconds);
     }
