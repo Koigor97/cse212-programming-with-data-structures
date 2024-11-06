@@ -8,7 +8,7 @@
 /// </summary>
 public static class StandardDeviation {
     public static void Run() {
-        // generate a large array of random integers
+        // generate a large array of random integers - increase the size of the array as needed
         var numbers = ArrayGenerator.GenerateLargeArray(10000);
 
         Stopwatch stopwatch = Stopwatch.StartNew();
