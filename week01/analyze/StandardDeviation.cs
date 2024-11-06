@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿using System.Diagnostics;
+
+/// <summary>
 /// These 3 functions will (in different ways) calculate the standard
 /// deviation from a list of numbers.  The standard deviation
 /// is defined as the square root of the variance.  The variance is 
@@ -6,10 +8,25 @@
 /// </summary>
 public static class StandardDeviation {
     public static void Run() {
-        var numbers = new[] { 600, 470, 170, 430, 300 };
-        Console.WriteLine(StandardDeviation1(numbers)); // Should be 147.322 
-        Console.WriteLine(StandardDeviation2(numbers)); // Should be 147.322 
-        Console.WriteLine(StandardDeviation3(numbers)); // Should be 147.322 
+        // generate a large array of random integers
+        var numbers = ArrayGenerator.GenerateLargeArray(10000);
+
+        Stopwatch stopwatch = Stopwatch.StartNew();
+
+        // calculate standard deviation using each method
+        Console.WriteLine("Standard Deviation Method 1" + StandardDeviation1(numbers));
+        stopwatch.Stop();
+        Console.WriteLine("Standard Deviation Method 1 took {0}ms", stopwatch.ElapsedMilliseconds);
+
+        stopwatch.Restart();
+        Console.WriteLine("Standard Deviation Method 2" + StandardDeviation2(numbers)); 
+        stopwatch.Stop();
+        Console.WriteLine("Standard Deviation Method 2 took {0}ms", stopwatch.ElapsedMilliseconds);
+
+        stopwatch.Restart();
+        Console.WriteLine("Standard Deviation Method 3" + StandardDeviation3(numbers));  
+        stopwatch.Stop();
+        Console.WriteLine("Standard Deviation Method 3 took {0}ms", stopwatch.ElapsedMilliseconds);
     }
 
     private static double StandardDeviation1(int[] numbers) {
