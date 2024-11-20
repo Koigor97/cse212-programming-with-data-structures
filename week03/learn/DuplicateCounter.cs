@@ -25,4 +25,21 @@
     private static int CountDuplicates(int[] data)
     {
         // Add code here.
-        var duplicatesCount
+        var duplicatesCount = 0;
+        
+        var duplicates = new HashSet<int>();
+        
+        // duplicates.
+        foreach (var i in data)
+        {
+            // The Add method in the HashSet data structure in C# returns 
+            // a boolean value - true or false. I will use this to count 
+            // the duplicate values
+            if (!duplicates.Add(i))
+            {
+                duplicatesCount++;
+            }
+        }
+        return duplicatesCount;
+    }
+}
